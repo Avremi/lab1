@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+            <script src="http://malsup.github.com/jquery.form.js"></script>         
+    </head>
+    <body>
+
+<form method="GET" action="/check" id="myForm">
+    <fieldset>
+        <legend>Please, check for access</legend>
+    <input type="text" name="username" placeholder="User Name">
+    <br>
+    <input type="password" name="password" placeholder="Password">
+    <br>
+    <input type="submit" value="access">
+    <p id="message" value="" ></p>
+    <script>
+        $(document).ready(function(){
+
+            
+            $('#myForm').ajaxForm({
+               success: function(response){
+                alert(response);
+               }
+            })
+        })
+        </script>
+</fieldset>
+</form>
+
+</body>
+</html>
